@@ -7,38 +7,125 @@
 	<link rel="stylesheet" href="internal_restricted/v1.0/css/reveal.css">
 	<link rel="stylesheet" href="internal_restricted/v1.0/css/theme/eo4geo.css" id="theme">
 	<link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
-	<link rel="stylesheet" href="header.css">
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
 	<div class="reveal">
-		<div class="header-left" style="width: 16%;height : 11%"></div>
+		<div class="header-left" style="width: 6%;height : 11%"></div>
 		<div class="header-right" style="width: 6%;height : 11%"></div>
 		<div class="slides">
 			<section>
 				<h1>Concentrating Solar Thermal Systems</h1>
 				<br>
-				<em> Simulation and experimental study for applications at intermediate to medium temperatures</em>
+				<h2>
+					Simulation and experimental study for applications at intermediate to medium temperatures
+				</h2>
 				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				Orestis Panagopoulos-Kontostaulakis
-				<!-- AUTHORS: PUT YOUR PRESENTER NOTES HERE: -->
-				<aside class="notes">
-					Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you
-					open the speaker notes window (hit »S« on your keyboard).
-				</aside>
+				<p><em> Orestis Panagopoulos - Kontostaulakis</em></p>
 			</section>
 
-			<section>Slide 1</section>
+			<section>Optical simulations
+				<section>
+					<h2>SCO1: parabolic</h2>
+					<div>
+						<img style="box-shadow:none; width: 80%;" src="./resources/optical/sco1_parabolic.png">
+					</div>
+				</section>
+				<section>
+					<h2>SCO1: CPC</h2>
+					<div>
+						<img style="box-shadow:none; width: 80%" src="./resources/optical/sco1_cpc.png">
+					</div>
+				</section>
+				<section>
+					<h2>SCO4: Micro-mirror array</h2>
+					<div>
+						<img style="box-shadow:none; width: 50%;" src="./resources/optical/sco4.png">
+					</div>
+				</section>
+				<section>
+					$$n = \frac{F_a}{F_p}$$
+					<br>
+					$$F_a = F_p \cdot C_f - L_{total}$$
+					<br>
+					$$F_p = DNI \cdot S_m$$
+					<br>
+					$$L_{total} = ( L_s + L_m + L_a + L_r )$$
+				</section>
+				<section>
+					<div>
+						<ul>
+							<li>Item 1</li>
+							<li>Item 2</li>
+							<li>Item 3</li>
+						</ul>
+					</div>
+				</section>
+			</section>
 
-			<section>Slide 2</section>
+			<section>Thermal simulations
+				<section>
+					$$n = \frac{Q_u}{Q_r}$$
+					<br>
+					$$Q_u = \dot{m} C_p (T_{out} - T_{in})$$
+					<br>
+					$$Q_r = I \cdot A$$
+					<br>
+					$$n = F_R(\tau \alpha) - F_R U_L\frac{T_{in} - T_{amb}}{IA}$$
+				</section>
 
+				<section>
+					<hr>
+					\[ \begin{split}
+					\dot m C_p \frac{(T_{out} - T_{in})}{A} & = F'\tau \alpha K_{dir} I_{dir} + F'\tau \alpha K_{dfu}
+					I_{dfu} - c_1 (T_m - T_{amb}) \\
+					& - c_2 (T_m - T_{amb})^2 - c_3 v_w (T_m - T_{amb}) - c_6 v_w I_{glb} \\
+					& + c_4 [\epsilon_{longwave} - \sigma_{SB} (T_{amb}+273.15)^4] - c_5 \frac{dT_m}{dt}
+					\end{split} \]
+					<hr>
+					$$T_m = \frac{T{out} + T{in}}{2}$$
+
+					$$F' \tau \alpha = \frac{n_0}{0.85K_{dir}(15 ^{\circ} ) + 0.15 K_{dfu}}$$
+
+					$$K_{dir} = K_b(\theta_l) \cdot K_b(\theta_t)$$
+
+					\begin{split}
+					n_0 & = F' (\tau \alpha)_{rec} \cdot (\tau^2 \rho \gamma)_{con} \\
+					& = n_{0,rec} \cdot (\tau^2 \rho \gamma)_{con}
+					\end{split}
+
+					$$c_1 = \alpha_1 \frac{A_{rec}}{A_{con}}, c_2 = \alpha_2 \frac{A_{rec}}{A_{con}}, c_5 = m_{th}
+					\frac{A_{rec}}{A_{con}}$$
+				</section>
+
+				<section>
+					Removing zero-terms:
+					<br>
+					$$\dot m C_p \frac{(T_{out} - T_{in})}{A} = F'\tau \alpha K_{dir} I_{dir} - c_1 (T_m - T_{amb}) -
+					c_2 (T_m - T_{amb})^2 - c_5 \frac{dT_m}{dt}$$
+					<br>
+					Substituting $T_{out} = 2T_m -Tin$ and solving for $\frac{dT_m}{dt}$ we get:
+					<hr>
+					$$ \frac{dT_m}{dt} = \frac{1}{c_5} [F'\tau \alpha K_{dir} I_{dir} - c_1 (T_m - T_{amb}) - c_2 (T_m -
+					T_{amb})^2 -2 \frac{\dot m C_p}{A} (T_{m} - T_{in})]$$
+					<hr>
+				</section>
+
+				<section>
+					<h2>System response</h2>
+					<div class="container">
+						<br>
+						<div class="col">
+							<img style="box-shadow:none;" src="./resources/thermal/temperatures.png">
+						</div>
+						<div class="col">
+							<img style="box-shadow:none;" src="./resources/thermal/delta_t.png">
+						</div>
+					</div>
+				</section>
+			</section>
 			<section>Slide 3</section>
-
 		</div>
 </body>
 
@@ -55,13 +142,13 @@
 		},
 		dependencies: [
 			{ src: './internal_restricted/v1.0/plugin/markdown/assets/js/revealjs/plugin/simplemenu/simplemenu.js', async: false },
+			{ src: './internal_restricted/v1.0/plugin/math/math.js' },
 			// Optional libraries used to extend on reveal.js
 			{ src: './internal_restricted/v1.0/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
 			{ src: './internal_restricted/v1.0/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
 			{ src: './internal_restricted/v1.0/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } },
 			{ src: './internal_restricted/v1.0/plugin/notes/notes.js' }, { src: 'socket.io/socket.io.js', async: true },
 			{ src: './internal_restricted/v1.0/plugin/notes-server/client.js', async: true }
-
 		]
 	});
 </script>

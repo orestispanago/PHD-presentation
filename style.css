@@ -1,35 +1,29 @@
  .header-right {
-
    content: url(./resources/lapup.png);
    top: 0;
-   background: #fff;
-   background-color: #fff;
    height: 100%;
    width: 100%;
-
    z-index: -1;
    position: absolute;
    top: 0%;
    right: 0%;
-
-
    justify-content: left;
-
  }
 
  .header-left {
-
-   content: url(./resources/upatras.jpg);
+   content: url(./resources/upatras.png);
    top: 0;
-   background: #fff;
-   background-color: #fff;
    height: 100%;
    width: 100%;
    left: 0px;
    z-index: 3;
-
-
-
    justify-content: left;
+ }
 
+ .container {
+   display: flex;
+ }
+
+ .col {
+   flex: 1;
  }
