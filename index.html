@@ -12,37 +12,210 @@
 
 <body>
 	<div class="reveal">
-		<div class="header-left" style="width: 6%;height : 11%"></div>
-		<div class="header-right" style="width: 6%;height : 11%"></div>
+		<div class="header-left"></div>
+		<div class="header-right"></div>
 		<div class="slides">
 			<section>
 				<h1>Concentrating Solar Thermal Systems</h1>
 				<br>
-				<h2>
-					Simulation and experimental study for applications at intermediate to medium temperatures
-				</h2>
+				<h2>Simulation and experimental study for applications at intermediate to medium temperatures</h2>
 				<br>
-				<p><em> Orestis Panagopoulos - Kontostaulakis</em></p>
+				<p><em>Orestis Panagopoulos - Kontostaulakis</em></p>
 			</section>
 
 			<section>Optical simulations
 				<section>
-					<h2>SCO1: parabolic</h2>
-					<div>
-						<img style="box-shadow:none; width: 80%;" src="./resources/optical/sco1_parabolic.png">
+					<h2>SCO1-parabolic</h2>
+					<img style="width: 80%;" src="./resources/optical/sco1_parabolic/sco1_parabolic.png">
+				</section>
+				<section>
+					<h2>SCO1-parabolic: Linear absorber path</h2>
+					<img style="width: 80%" src="./resources/optical/sco1_parabolic/heatmap_L.png">
+				</section>
+				<section>
+					<h2>SCO1-parabolic: Absorber equation</h2>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco1_parabolic/linear_fit_left.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_parabolic/linear_fit_right.png">
+						</div>
+					</div>
+					\[y=
+					\begin{cases}
+					-0.00603663x+1.1959 & 135^{\circ}\leq\theta_{az}\leq180^{\circ}
+					\\
+					0.00584453x-0.932538 & 180^{\circ} \lt \theta_{az}\leq225^{\circ} \end{cases}\]
+				</section>
+				<section>
+					<h2>SCO1-parabolic: Equation test</h2>
+					<img style="width: 70%;" src="./resources/optical/sco1_parabolic/linregress_equation_test_g.png">
+				</section>
+
+				<section>
+					<h2>SCO1-CPC</h2>
+					<img style="width: 80%" src="./resources/optical/sco1_CPC/sco1_cpc.png">
+				</section>
+				<section>
+					<h2>SCO1-CPC: Linear absorber path</h2>
+					<img style="width: 80%" src="./resources/optical/sco1_CPC/Linear/heatmap_L.png">
+				</section>
+				<section>
+					<h2>SCO1-CPC: Linear absorber path</h2>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Linear/linear_fit_left.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Linear/linear_fit_right.png">
+						</div>
+					</div>
+					\[y=
+					\begin{cases}
+					-0.0035(\pm0.0001)\theta_{az}+0.71(\pm0.02) & 135^{\circ} \leq \theta_{az}\leq180^{\circ}
+					\\
+					0.0036(\pm0.0001)\theta_{az}-0.59(\pm0.02) & 180^{\circ} \lt \theta_{az}\leq225^{\circ}
+					\end{cases}
+					\]
+				</section>
+				<section>
+					<h2>SCO1-CPC: Equation test</h2>
+					<img style="width: 70%" src="./resources/optical/sco1_CPC/Linear/linregress_equation_test.png">
+				</section>
+				<section>
+					<h2>SCO1-CPC: Non-linear absorber path</h2>
+					<div class="container">
+						<div class="col">
+							<img src=" ./resources/optical/sco1_CPC/Non-Linear/Heatmaps/135.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Heatmaps/145.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Heatmaps/155.png">
+						</div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Heatmaps/160.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Heatmaps/170.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Heatmaps/180.png">
+						</div>
 					</div>
 				</section>
 				<section>
-					<h2>SCO1: CPC</h2>
-					<div>
-						<img style="box-shadow:none; width: 80%" src="./resources/optical/sco1_cpc.png">
+					<h2>SCO1-CPC: Non-linear absorber path, thresholds</h2>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Count/03.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Count/04.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Count/05.png">
+						</div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Count/06.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Count/07.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Count/08.png">
+						</div>
 					</div>
 				</section>
+				<section>
+					<h2>SCO1-CPC: Non-linear absorber path, mean positions</h2>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Mean/03.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Mean/04.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Mean/05.png">
+						</div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Mean/06.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Mean/07.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Mean/08.png">
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>SCO1-CPC: Non-linear absorber path, $\gamma \gt 0.6$ positions</h2>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Loc/135.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Loc/145.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Loc/155.png">
+						</div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Loc/160.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Loc/170.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Loc/180.png">
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<h2>SCO1-CPC: Circular absorber path</h2>
+					<div class="container">
+						<div class="col">
+							<img
+								src="./resources/optical/sco1_CPC/Non-Linear/Circular/heatmap_intercept_factor_all_phi_az.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Circular/filter07_simple.png">
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>SCO1-CPC: Circular absorber path, $\gamma \gt 0.7$</h2>
+					<img style="width: 50%;" src="./resources/optical/sco1_CPC/Non-Linear/Circular/fits.png">
+				</section>
+				<section>
+					<h2>SCO1-CPC: Circular absorber path, linear vs polynomial</h2>
+					<div class="container">
+						<div class="col">
+							<img
+								src="./resources/optical/sco1_CPC/Non-Linear/Circular/linear_regression_validation.png">
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Circular/3deg_polynomial_validation.png">
+						</div>
+					</div>
+				</section>
+
 				<section>
 					<h2>SCO4: Micro-mirror array</h2>
-					<div>
-						<img style="box-shadow:none; width: 50%;" src="./resources/optical/sco4.png">
-					</div>
+					<img style="width: 50%;" src="./resources/optical/sco4/sco4.png">
 				</section>
 				<section>
 					$$n = \frac{F_a}{F_p}$$
@@ -115,12 +288,11 @@
 				<section>
 					<h2>System response</h2>
 					<div class="container">
-						<br>
 						<div class="col">
-							<img style="box-shadow:none;" src="./resources/thermal/temperatures.png">
+							<img src="./resources/thermal/temperatures.png">
 						</div>
 						<div class="col">
-							<img style="box-shadow:none;" src="./resources/thermal/delta_t.png">
+							<img src="./resources/thermal/delta_t.png">
 						</div>
 					</div>
 				</section>
