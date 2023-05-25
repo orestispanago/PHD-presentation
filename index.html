@@ -33,7 +33,7 @@
 					<img style="width: 80%" src="./resources/optical/sco1_parabolic/heatmap_L.png">
 				</section>
 				<section>
-					<h2>SCO1-parabolic: Absorber equation</h2>
+					<h2>SCO1-parabolic: Absorber equation, $max(\gamma)$</h2>
 					<div class="container">
 						<div class="col">
 							<img src="./resources/optical/sco1_parabolic/linear_fit_left.png">
@@ -62,7 +62,7 @@
 					<img style="width: 80%" src="./resources/optical/sco1_CPC/Linear/heatmap_L.png">
 				</section>
 				<section>
-					<h2>SCO1-CPC: Linear absorber path</h2>
+					<h2>SCO1-CPC: Linear absorber path, $max(\gamma)$</h2>
 					<div class="container">
 						<div class="col">
 							<img src="./resources/optical/sco1_CPC/Linear/linear_fit_left.png">
@@ -223,6 +223,7 @@
 							<ul>
 								<li>7 x 11 mirror array in landscape orientation</li>
 								<li>0.14 x 0.14 cm mirror facet</li>
+								<li>2 mm spacing between mirrors</li>
 								<li>0.25 x 0.25 cm receiver</li>
 								<li>1.5 m receiver height (above mirror array center)</li>
 							</ul>
@@ -256,46 +257,25 @@
 				</section>
 				<section>
 					<h2>SCO4: Absorbed flux</h2>
-					<div class="container">
-						<div class="col">
-							<img src="./resources/optical/sco4/transversal/absorbed_flux.png">
-						</div>
-						<div class="col">
-							<img src="./resources/optical/sco4/longitudinal/absorbed_flux.png">
-						</div>
-					</div>
+					<img style="width: 80%;" src="./resources/optical/sco4/both/absorbed_flux.png">
 				</section>
 				<section>
-					<h2>SCO4: Flux distribution - ideal</h2>
+					<h2>SCO4: Losses</h2>
 					<div class="container">
 						<div class="col">
-							<img src="./resources/optical/sco4/heatmaps/ideal-plain/heatmap_90_0.png">
-							Normal incidence
+							<img src="./resources/optical/sco4/paraview/transversal_90_0.png">
+							$\theta_z = 0^{\circ}$
 						</div>
 						<div class="col">
-							<img src="./resources/optical/sco4/heatmaps/ideal-plain/heatmap_135_0.png">
-							$45 ^{\circ}$ transversal
+							<img src="./resources/optical/sco4/paraview/transversal_100_0.png">
+							$\theta_z = 10^{\circ}$
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco4/paraview/transversal_130_0.png">
+							$\theta_z = 40^{\circ}$
 						</div>
 					</div>
 				</section>
-				<section>
-					<h2>SCO4: Flux distribution - errors</h2>
-					<ul>
-						<li>Pillbox sun shape 4.65 mrad</li>
-						<li>Mirror surface slope error 7 mrad</li>
-					</ul>
-					<div class="container">
-						<div class="col">
-							<img src="./resources/optical/sco4/heatmaps/all_errors/heatmap_90_0.png">
-							Normal incidence
-						</div>
-						<div class="col">
-							<img src="./resources/optical/sco4/heatmaps/all_errors/heatmap_135_0.png">
-							$45 ^{\circ}$ transversal
-						</div>
-					</div>
-				</section>
-
 				<section>
 					<h2>SCO4: Shadow losses</h2>
 					<div class="container">
@@ -315,10 +295,41 @@
 					<h2>SCO4: Missing Losses</h2>
 					<div class="container">
 						<div class="col">
-							<img src="./resources/optical/sco4/paraview/transversal_90_0_missing.png">
+							<img style="height: 70%;"
+								src="./resources/optical/sco4/paraview/transversal_90_0_missing.png">
 						</div>
 						<div class="col">
-							<img src="./resources/optical/sco4/transversal/missing_losses.png">
+							<img src="./resources/optical/sco4/both/missing_losses.png">
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>SCO4: Flux distribution - ideal</h2>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco4/heatmaps/ideal-plain/heatmap_90_0.png">
+							$\theta_z = 0^{\circ}$
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco4/heatmaps/ideal-plain/heatmap_135_0.png">
+							$\theta_z = 45 ^{\circ}$ transversal
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>SCO4: Flux distribution - errors</h2>
+					<ul>
+						<li>Pillbox sun shape 4.65 mrad</li>
+						<li>Mirror surface slope error 7 mrad</li>
+					</ul>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/optical/sco4/heatmaps/all_errors/heatmap_90_0.png">
+							$\theta_z = 0^{\circ}$
+						</div>
+						<div class="col">
+							<img src="./resources/optical/sco4/heatmaps/all_errors/heatmap_135_0.png">
+							$\theta_z = 45 ^{\circ}$ transversal
 						</div>
 					</div>
 				</section>
@@ -342,13 +353,23 @@
 				</section>
 
 				<section>
+					<h2>ISO equation</h2>
 					<hr>
 					\[ \begin{split}
-					\dot m C_p \frac{(T_{out} - T_{in})}{A} & = F'\tau \alpha K_{dir} I_{dir} + F'\tau \alpha K_{dfu}
+					\dot m C_p \frac{(T_{out} - T_{in})}{A} & = F'\tau \alpha K_{dir} I_{dir} + F'\tau \alpha
+					K_{dfu}
 					I_{dfu} - c_1 (T_m - T_{amb}) \\
 					& - c_2 (T_m - T_{amb})^2 - c_3 v_w (T_m - T_{amb}) - c_6 v_w I_{glb} \\
 					& + c_4 [\epsilon_{longwave} - \sigma_{SB} (T_{amb}+273.15)^4] - c_5 \frac{dT_m}{dt}
 					\end{split} \]
+					<!-- $\require{\cancel}$
+					\[ \begin{split}
+					\dot m C_p \frac{(T_{out} - T_{in})}{A} & = F'\tau \alpha K_{dir} I_{dir} + F'\tau
+					\alpha K_{dfu}
+					\cancelto{0}{I_{dfu}} - c_1 (T_m - T_{amb}) \\
+					& - c_2 (T_m - T_{amb})^2 - \cancelto{0}{c_3} v_w (T_m - T_{amb}) - \cancelto{0}{c_6} v_w I_{glb} \\
+					& + \cancelto{0}{c_4 [\epsilon_{longwave} - \sigma_{SB} (T_{amb}+273.15)^4]} - c_5 \frac{dT_m}{dt}
+					\end{split} \] -->
 					<hr>
 					$$T_m = \frac{T{out} + T{in}}{2}$$
 
@@ -361,17 +382,22 @@
 					& = n_{0,rec} \cdot (\tau^2 \rho \gamma)_{con}
 					\end{split}
 
-					$$c_1 = \alpha_1 \frac{A_{rec}}{A_{con}}, c_2 = \alpha_2 \frac{A_{rec}}{A_{con}}, c_5 = m_{th}
+					$$c_1 = \alpha_1 \frac{A_{rec}}{A_{con}}, \quad c_2 = \alpha_2 \frac{A_{rec}}{A_{con}}, \quad c_5 =
+					m_{th}
 					\frac{A_{rec}}{A_{con}}$$
 				</section>
 
 				<section>
+					<h2>Modified ISO equation</h2>
 					Removing zero-terms:
 					<br>
 					$$\dot m C_p \frac{(T_{out} - T_{in})}{A} = F'\tau \alpha K_{dir} I_{dir} - c_1 (T_m - T_{amb}) -
 					c_2 (T_m - T_{amb})^2 - c_5 \frac{dT_m}{dt}$$
 					<br>
 					Substituting $T_{out} = 2T_m -Tin$ and solving for $\frac{dT_m}{dt}$ we get:
+					<br>
+					<br>
+					<br>
 					<hr>
 					$$ \frac{dT_m}{dt} = \frac{1}{c_5} [F'\tau \alpha K_{dir} I_{dir} - c_1 (T_m - T_{amb}) - c_2 (T_m -
 					T_{amb})^2 -2 \frac{\dot m C_p}{A} (T_{m} - T_{in})]$$

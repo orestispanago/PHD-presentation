@@ -1,5 +1,5 @@
  .header-right {
-   content: url(./resources/lapup.png);
+   content: url(./resources/logos/lapup.png);
    top: 0;
    height: 11%;
    width: 6%;
@@ -11,7 +11,7 @@
  }
 
  .header-left {
-   content: url(./resources/upatras.png);
+   content: url(./resources/logos/upatras.png);
    top: 0;
    height: 11%;
    width: 6%;
