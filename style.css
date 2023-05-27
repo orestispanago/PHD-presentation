@@ -22,8 +22,13 @@
 
  .container {
    display: flex;
+   align-items: center;
  }
 
  .col {
    flex: 1;
+ }
+
+ .mytable tr td {
+   border-bottom: none;
  }
