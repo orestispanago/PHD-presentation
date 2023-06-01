@@ -22,7 +22,17 @@
 				<br>
 				<p><em>Orestis Panagopoulos - Kontostaulakis</em></p>
 			</section>
-
+			<section>
+				<h2>Design point</h2>
+				<div class="container">
+					<div class="col">
+						<img src="./resources/medium_temperature_collectors/collectors_eff_dt_i_comparison.png">
+					</div>
+					<div class="col">
+						<img src="./resources/optical/sco1_parabolic/linear_fit_right.png">
+					</div>
+				</div>
+			</section>
 			<section><em>Optical simulations</em>
 				<section>
 					<h2>SCO1-parabolic</h2>
@@ -44,9 +54,9 @@
 					</div>
 					\[y=
 					\begin{cases}
-					-0.00603663x+1.1959 & 135^{\circ}\leq\theta_{az}\leq180^{\circ}
+					-0.00603663\theta_{az}+1.1959 & 135^{\circ}\leq\theta_{az}\leq180^{\circ}
 					\\
-					0.00584453x-0.932538 & 180^{\circ} \lt \theta_{az}\leq225^{\circ} \end{cases}\]
+					0.00584453\theta_{az}-0.932538 & 180^{\circ} \lt \theta_{az}\leq225^{\circ} \end{cases}\]
 				</section>
 				<section>
 					<h2>SCO1-parabolic: Equation test</h2>
@@ -476,6 +486,51 @@
 
 			<section>Thermal simulations
 				<section>
+					<h2>Absorber temperature distribution</h2>
+					<ul>
+						<li>
+							Simplified overall heat loss coefficient (convective)
+							$U = \alpha_1 + \alpha_2 \cdot ( T_{abs} - T_{amb})$
+						</li>
+						<li>
+							$T_{amb} = 30 \ ^{\circ}C$
+						</li>
+						<li>Boundary condition $T = 150 \ ^{\circ}C$ </li>
+					</ul>
+					<div class="container">
+						<div class="col">
+							<img style="width: 90%;" src="./resources/thermal/receiver_3d.png">
+						</div>
+						<div class="col">
+							<img style="width: 70%;" src="./resources/thermal/absorber_temp_heatmap.png">
+						</div>
+					</div>
+					<table class="mytable">
+						<tr>
+							<th>Case</th>
+							<th>$\alpha (W \cdot m^{-2} \cdot K^{-1})$</th>
+							<th>$T_{max} (^{\circ} C)$</th>
+							<th>$\dot{Q}_{loss} (W)$</th>
+							<th>$\frac{\dot{Q}_{usable}}{\dot{Q}_{in}} (\%)$</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>$\alpha_1 = 4, \alpha_2=0.02$</td>
+							<td>226.90</td>
+							<td>993.43</td>
+							<td>95.9</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>$\alpha_1 = 6, \alpha_2=0.03$</td>
+							<td>225.96</td>
+							<td>972.73</td>
+							<td>93.9</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2>Basic equations</h2>
 					$$n = \frac{Q_u}{Q_r}$$
 					<br>
 					$$Q_u = \dot{m} C_p (T_{out} - T_{in})$$
@@ -484,7 +539,6 @@
 					<br>
 					$$n = F_R(\tau \alpha) - F_R U_L\frac{T_{in} - T_{amb}}{IA}$$
 				</section>
-
 				<section>
 					<h2>ISO equation</h2>
 					<hr>
@@ -519,7 +573,6 @@
 					m_{th}
 					\frac{A_{rec}}{A_{con}}$$
 				</section>
-
 				<section>
 					<h2>Modified ISO equation</h2>
 					Removing zero-terms:
@@ -537,6 +590,76 @@
 					<hr>
 				</section>
 				<section>
+					<h2>Thermal model example parameters</h2>
+					<table class="mytable">
+						<tr>
+							<th>Parameter</th>
+							<th>Value</th>
+							<th>Units</th>
+						</tr>
+						<tr>
+							<td>$A$</td>
+							<td>1</td>
+							<td>$m^2$</td>
+						</tr>
+						<tr>
+							<td>$F&#39;_{\tau\alpha}$</td>
+							<td>0.507</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>$c_1$</td>
+							<td>0.7153</td>
+							<td>$W \cdot m^{-2} \cdot K^{-1}$</td>
+						</tr>
+						<tr>
+							<td>$c_2$</td>
+							<td>0.00339</td>
+							<td>$W \cdot m^{-2} \cdot K^{-1}$</td>
+						</tr>
+						<tr>
+							<td>$c_5$</td>
+							<td>675</td>
+							<td>$J \cdot m^{-2} K^{-1}$</td>
+						</tr>
+						<tr>
+							<td>$\dot m$</td>
+							<td>0.022</td>
+							<td>$kg \cdot s^{-1}$</td>
+						</tr>
+						<tr>
+							<td>$T_{amb}$</td>
+							<td>300</td>
+							<td>K</td>
+						</tr>
+						<tr>
+							<td>$T_{in}$</td>
+							<td>290</td>
+							<td>K</td>
+						</tr>
+						<tr>
+							<td>$C_p$</td>
+							<td>4184</td>
+							<td>$J \cdot kg ^{-1} K^{-1}$</td>
+						</tr>
+						<tr>
+							<td>$I_{dir0}$</td>
+							<td>800</td>
+							<td>$W \cdot m^{-1}$</td>
+						</tr>
+						<tr>
+							<td>$t_t$</td>
+							<td>40</td>
+							<td>s</td>
+						</tr>
+						<tr>
+							<td>$t_{tot}$</td>
+							<td>60</td>
+							<td>s</td>
+						</tr>
+					</table>
+				</section>
+				<section>
 					<h2>System response</h2>
 					<div class="container">
 						<div class="col">
@@ -544,6 +667,40 @@
 						</div>
 						<div class="col">
 							<img src="./resources/thermal/delta_t.png">
+						</div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<img style="width: 40%;" src="./resources/thermal/delta_frac.png">
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Weather data example</h2>
+					<img style="width: 80%;" src="./resources/thermal/weather_example_temps.png">
+					<img style="width: 80%;" src="./resources/thermal/weather_example_power_eff.png">
+				</section>
+				<section>
+					<h2>Annual simulations</h2>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/thermal/daily_energy_yield.png">
+						</div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/thermal/dni.png">
+						</div>
+						<div class="col">
+							<img src="./resources/thermal/kdir_idir.png">
+						</div>
+					</div>
+					<div class="container">
+						<div class="col">
+							<img src="./resources/thermal/qdot.png">
+						</div>
+						<div class="col">
+							<img src="./resources/thermal/eff.png">
 						</div>
 					</div>
 				</section>
@@ -726,8 +883,24 @@
 							<img style="width: 60%;" src="./resources/experiments/sco4_white_plate_highlighted.png">
 						</div>
 					</div>
-
 				</section>
+			</section>
+			<section>
+				Acknowledgments
+				<div class="container">
+					<img style="box-shadow: none;" src="./resources/logos/flags.png">
+					<h2>Solar Collectors with Static Concentrators for solar thermal
+						applications at intermediate to medium
+						temperatures</h2>
+				</div>
+				<a href="https://scoscoproject.github.io/">https://scoscoproject.github.io</a>
+				<img style="box-shadow: none; width: 80%;" src="./resources/logos/scosco_partners.png">
+			</section>
+			<section data-background-image="./resources/group_photo.png" data-background-opacity="1">
+				<h1>Thank you!</h1>
+				<br><br><br><br><br><br>
+				<br><br><br><br><br><br>
+				<br><br><br><br><br><br>
 			</section>
 		</div>
 </body>
