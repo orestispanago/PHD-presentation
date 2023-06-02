@@ -24,14 +24,14 @@
 			</section>
 			<section>
 				<h2>Design point</h2>
-				<div class="container">
-					<div class="col">
-						<img src="./resources/medium_temperature_collectors/collectors_eff_dt_i_comparison.png">
-					</div>
-					<div class="col">
-						<img src="./resources/optical/sco1_parabolic/linear_fit_right.png">
-					</div>
-				</div>
+				<ul>
+					<li>Area of interest: $100 \ ^{\circ}C \lt T \le 250 \ ^{\circ}C$</li>
+					<li>Efficiency: $0.5$</li>
+					<li>Operating temperature: $150 \ ^{\circ} C$</li>
+					<li>Maximum temperature: $250 \ ^{\circ} C$</li>
+				</ul>
+				<img style="width: 70%;"
+					src="./resources/medium_temperature_collectors/collectors_eff_dt_i_comparison.png">
 			</section>
 			<section><em>Optical simulations</em>
 				<section>
@@ -202,13 +202,12 @@
 								src="./resources/optical/sco1_CPC/Non-Linear/Circular/heatmap_intercept_factor_all_phi_az.png">
 						</div>
 						<div class="col">
-							<img src="./resources/optical/sco1_CPC/Non-Linear/Circular/filter07_simple.png">
+							<img src="./resources/optical/sco1_CPC/Non-Linear/Circular/fits.png">
 						</div>
 					</div>
-				</section>
-				<section>
-					<h2>SCO1-CPC: Circular absorber path, $\gamma \gt 0.7$</h2>
-					<img style="width: 50%;" src="./resources/optical/sco1_CPC/Non-Linear/Circular/fits.png">
+					$$ \phi = 3.48 (\pm 0.02) \theta_{az} -447 (\pm 3), (r^2 = 0.988, n = 522, p \lt 0.05)$$
+					$$ \phi = 0.00050 (\pm 0.00003) \theta_{az}^3 -0.271\theta_{az}^2 (\pm 0.02) + 51 (\pm 3)\theta_{az}
+					-3214 \pm 200, (r^2 = 0.992, n = 522, p \lt 0.05)$$
 				</section>
 				<section>
 					<h2>SCO1-CPC: Circular absorber path, linear vs polynomial</h2>
@@ -255,11 +254,14 @@
 						<div class="col">
 							<ul>
 								<li>$C_f$ - Cosine factor: the average cosine of the angle
-									between the incoming solar radiation and the normal of primary reflectors.</li>
-								<li>$F_p$ - Potential flux: the flux that would be absorbed by the receiver if all the
+									between the incoming solar radiation and the normal of primary reflectors.
+								</li>
+								<li>$F_p$ - Potential flux: the flux that would be absorbed by the receiver if
+									all the
 									reflectors were
 									optimally oriented.</li>
-								<li>$L_m$ - Missing Losses: the flux that reaches primary reflectors, is reflected but
+								<li>$L_m$ - Missing Losses: the flux that reaches primary reflectors, is
+									reflected but
 									is not finally absorbed by the receivers.</li>
 							</ul>
 						</div>
@@ -476,7 +478,8 @@
 						</div>
 					</div>
 					<ul>
-						<li>Stable maximum performance for $\pm1.5$ hours around solar noon during the whole year.</li>
+						<li>Stable maximum performance for $\pm1.5$ hours around solar noon during the whole
+							year.</li>
 						<li>Extended time range of efficient operation for higher latitudes</li>
 						<li>Reduced $F_a$ in summer morning & afternoon</li>
 						<li>Larger mirror spacing and enclosure recommended</li>
@@ -568,7 +571,8 @@
 					& = n_{0,rec} \cdot (\tau^2 \rho \gamma)_{con}
 					\end{split}
 
-					$$c_1 = \alpha_1 \frac{A_{rec}}{A_{con}}, \quad c_2 = \alpha_2 \frac{A_{rec}}{A_{con}}, \quad c_5 =
+					$$c_1 = \alpha_1 \frac{A_{rec}}{A_{con}}, \quad c_2 = \alpha_2 \frac{A_{rec}}{A_{con}}, \quad
+					c_5 =
 					m_{th}
 					\frac{A_{rec}}{A_{con}}$$
 				</section>
@@ -576,7 +580,8 @@
 					<h2>Modified ISO equation</h2>
 					Removing zero-terms:
 					<br>
-					$$\dot m C_p \frac{(T_{out} - T_{in})}{A} = F'\tau \alpha K_{dir} I_{dir} - c_1 (T_m - T_{amb}) -
+					$$\dot m C_p \frac{(T_{out} - T_{in})}{A} = F'\tau \alpha K_{dir} I_{dir} - c_1 (T_m - T_{amb})
+					-
 					c_2 (T_m - T_{amb})^2 - c_5 \frac{dT_m}{dt}$$
 					<br>
 					Substituting $T_{out} = 2T_m -Tin$ and solving for $\frac{dT_m}{dt}$ we get:
@@ -584,7 +589,8 @@
 					<br>
 					<br>
 					<hr>
-					$$ \frac{dT_m}{dt} = \frac{1}{c_5} [F'\tau \alpha K_{dir} I_{dir} - c_1 (T_m - T_{amb}) - c_2 (T_m -
+					$$ \frac{dT_m}{dt} = \frac{1}{c_5} [F'\tau \alpha K_{dir} I_{dir} - c_1 (T_m - T_{amb}) - c_2
+					(T_m -
 					T_{amb})^2 -2 \frac{\dot m C_p}{A} (T_{m} - T_{in})]$$
 					<hr>
 				</section>
