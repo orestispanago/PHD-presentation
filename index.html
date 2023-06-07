@@ -35,42 +35,12 @@
 			</section>
 			<section><em>Optical simulations</em>
 				<section>
-					<h2>SCO1-parabolic</h2>
-					<img style="width: 80%;" src="./resources/optical/sco1_parabolic/sco1_parabolic.png">
-				</section>
-				<section>
-					<h2>SCO1-parabolic: Linear absorber path</h2>
-					<img style="width: 80%" src="./resources/optical/sco1_parabolic/heatmap_L.png">
-				</section>
-				<section>
-					<h2>SCO1-parabolic: Absorber equation, $max(\gamma)$</h2>
-					<div class="container">
-						<div class="col">
-							<img src="./resources/optical/sco1_parabolic/linear_fit_left.png">
-						</div>
-						<div class="col">
-							<img src="./resources/optical/sco1_parabolic/linear_fit_right.png">
-						</div>
-					</div>
-					\[y=
-					\begin{cases}
-					-0.0060(\pm0.0002) \theta_{az} +1.19(\pm0.04) & 135^{\circ}\leq\theta_{az}\leq180^{\circ}
-					\\
-					0.0058(\pm0.0001) \theta_{az} -0.93(\pm0.02) & 180^{\circ} \lt \theta_{az}\leq225^{\circ}
-					\end{cases}\]
-				</section>
-				<section>
-					<h2>SCO1-parabolic: Equation test</h2>
-					<img style="width: 70%;" src="./resources/optical/sco1_parabolic/linregress_equation_test_g.png">
-				</section>
-
-				<section>
 					<h2>SCO1-CPC</h2>
 					<img style="width: 80%" src="./resources/optical/sco1_CPC/sco1_cpc.png">
 				</section>
 				<section>
 					<h2>SCO1-CPC: Linear absorber path</h2>
-					<img style="width: 80%" src="./resources/optical/sco1_CPC/Linear/heatmap_L.png">
+					<img style="width: 80%" src="./resources/optical/sco1_CPC/Linear/heatmap.png">
 				</section>
 				<section>
 					<h2>SCO1-CPC: Linear absorber path, $max(\gamma)$</h2>
@@ -736,32 +706,28 @@
 						<div class="col">
 							<h3>General guidelines</h3>
 							<ol>
-								<li>No data should be stored in the datalogger.
-									Use SQL for data integrity and convenient access.
-								</li>
-								<li>Data transfer should be as fast as possible.</li>
-								<li>The measurement parameters should be easily configured.</li>
-								<li>Low-maintenance application back-end.</li>
+								<li>No data should be stored in the datalogger. SQL preferred </li>
+								<li>Fast data transfer.</li>
+								<li>Easy configuration.</li>
+								<li>Low-maintenance.</li>
 							</ol>
 						</div>
 						<div class="col">
 							<h3>Software requirements</h3>
 							<ol>
-								<li>Cost effectiveness: Open source.</li>
-								<li>Reliability: Proven components and communication protocols.</li>
-								<li>Data accessibility: Real-time data view.</li>
-								<li>Easy maintenance: Little to no coding.</li>
-								<li>Scalability: Support multiple nodes.</li>
-								<li>Versatility: Infrastructure for different nodes, centralized and
-									decentralized.</li>
+								<li>Open source.</li>
+								<li>Proven components and communication protocols.</li>
+								<li>Real-time data access.</li>
+								<li>Little to no maintainance.</li>
+								<li>Infrastructure for different nodes, centralized and decentralized.</li>
 							</ol>
 						</div>
 						<div class="col">
 							<h3>Hardware requirements</h3>
 							<ol>
-								<li>Cost effectiveness: Low-cost, high-quality measurements.</li>
-								<li>Availability: Off-the-shelf components, no specialized devices.</li>
-								<li>Versatility: Interfacing with high-quality sensors and lower-specs sensors.</li>
+								<li>Low-cost, high-quality measurements.</li>
+								<li>Off-the-shelf components, no specialized devices.</li>
+								<li>Interfacing with high-quality sensors and lower-specs sensors.</li>
 							</ol>
 						</div>
 					</div>
@@ -861,8 +827,8 @@
 				<section>
 					<h2>SCO4: characterization</h2>
 					<img style="width: 60%;" src="./resources/experiments/sco4_efficiency_curve.png">
-					$$n = -1.08 (\pm 0.08) \frac{T_{in} - T_{amb}}{I} + 0.392 (\pm 0.005)$$
-					$R=-0.843$ , p-value $\lt 0.05$ over 80 points
+					$$n = -1.69 (\pm 0.08) \frac{T_{in} - T_{amb}}{I} + 0.509 (\pm 0.006)$$
+					$R=-0.920$ , p $\lt 0.05$ over 80 points
 				</section>
 				<section>
 					<h2>SCO4: model validation</h2>
@@ -872,7 +838,7 @@
 						</div>
 						<div class="col">
 							$$T_{out, pred} = 0.989 (\pm 0.001) T_{out, meas} + 5.7 (\pm 0.1)$$
-							$R=0.999$ , p-value $\lt 0.05$ over 80 points
+							$R=0.999$ , p $\lt 0.05$ over 80 points
 							$$MBE=4.75$$
 							$$RMBE=5.87$$
 							$$RMSE=4.81$$
