@@ -90,7 +90,7 @@
 					</div> -->
 					<img style="width:80%;" src="./resources/optical/sco1_CPC/Non-Linear/Heatmaps/heatmap.gif">
 				</section>
-				<section>
+				<!-- <section>
 					<h2>SCO1-CPC: Non-linear absorber path, thresholds</h2>
 					<div class="container">
 						<div class="col">
@@ -109,8 +109,8 @@
 							<img style="width: 80%;" src="./resources/optical/sco1_CPC/Non-Linear/Hists/0.8.png">
 						</div>
 					</div>
-				</section>
-				<section>
+				</section> -->
+				<!-- <section>
 					<h2>SCO1-CPC: Non-linear absorber path, mean positions</h2>
 					<div class="container">
 						<div class="col">
@@ -132,7 +132,7 @@
 								src="./resources/optical/sco1_CPC/Non-Linear/Scatters/Mean/0.8.png">
 						</div>
 					</div>
-				</section>
+				</section> -->
 				<section>
 					<h2>SCO1-CPC: Non-linear absorber path, $\gamma \gt 0.7$ positions</h2>
 					<div class="container">
@@ -450,7 +450,7 @@
 					</ul>
 				</section>
 			</section>
-			<section>Thermal simulations
+			<section><em>Thermal simulations</em>
 				<section>
 					<h2>Absorber temperature distribution</h2>
 					<ul>
@@ -506,7 +506,7 @@
 					$$n = F_R(\tau \alpha) - F_R U_L\frac{T_{in} - T_{amb}}{IA}$$
 				</section>
 				<section>
-					<h2>ISO equation</h2>
+					<h2>ISO 9806:2017 equation</h2>
 					<hr>
 					\[ \begin{split}
 					\dot m C_p \frac{(T_{out} - T_{in})}{A} & = F'\tau \alpha K_{dir} I_{dir} + F'\tau \alpha
@@ -528,7 +528,7 @@
 
 					$$F' \tau \alpha = \frac{n_0}{0.85K_{dir}(15 ^{\circ} ) + 0.15 K_{dfu}}$$
 
-					$$K_{dir} = K_b(\theta_l) \cdot K_b(\theta_t)$$
+					$$K_{dir} = K_b(\theta_l) \cdot K_b(\theta_t), \quad K_b = \frac{\gamma_{\theta}}{\gamma_{0}}$$
 
 					\begin{split}
 					n_0 & = F' (\tau \alpha)_{rec} \cdot (\tau^2 \rho \gamma)_{con} \\
@@ -565,11 +565,6 @@
 							<th>Parameter</th>
 							<th>Value</th>
 							<th>Units</th>
-						</tr>
-						<tr>
-							<td>$A$</td>
-							<td>1</td>
-							<td>$m^2$</td>
 						</tr>
 						<tr>
 							<td>$F&#39;_{\tau\alpha}$</td>
@@ -614,7 +609,7 @@
 						<tr>
 							<td>$I_{dir0}$</td>
 							<td>800</td>
-							<td>$W \cdot m^{-1}$</td>
+							<td>$W \cdot m^{-2}$</td>
 						</tr>
 						<tr>
 							<td>$t_t$</td>
@@ -745,7 +740,7 @@
 							</tr>
 							<tr>
 								<td>Ambient temperature</td>
-								<td>$\pm 0.0 \ K$</td>
+								<td>$\pm 0.05 \ K$</td>
 							</tr>
 							<tr>
 								<td>Mass flow rate</td>
@@ -851,7 +846,7 @@
 				</section>
 			</section>
 			<section>
-				Acknowledgments
+				<em>Acknowledgments</em>
 				<div class="container">
 					<img style="box-shadow: none;" src="./resources/logos/flags.png">
 					<h2>Solar Collectors with Static Concentrators for solar thermal
