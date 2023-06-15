@@ -23,15 +23,45 @@
 				<p><em>Orestis Panagopoulos - Kontostaulakis</em></p>
 			</section>
 			<section>
-				<h2>Design point</h2>
-				<ul>
-					<li>Area of interest: $100 - 250 \ ^{\circ}C$</li>
-					<li>Efficiency: $0.5$</li>
-					<li>Operating temperature: $150 \ ^{\circ} C$</li>
-					<li>Maximum temperature: $250 \ ^{\circ} C$</li>
-				</ul>
-				<img style="width: 70%;"
-					src="./resources/medium_temperature_collectors/collectors_eff_dt_i_comparison.png">
+				<h2>The problem</h2>
+				<div class="container">
+					<div class="col">
+						<h3>Market gap</h3>
+						Few devices at $100 - 250 \ ^{\circ}C$
+						<img src="./resources/medium_temperature_collectors/collectors_eff_dt_i_comparison.png">
+					</div>
+					<div class="col">
+						<h3>Objectives</h3>
+						<ul>
+							<li>Prototype design and assembly</li>
+							<li>Operating temperature: $150 \ ^{\circ}C$</li>
+							<li>Efficiency $50\% \ at \ 250 \ ^{\circ}C$</li>
+							<li>Annual energy yield $> 750 kWh/m^2$</li>
+						</ul>
+						<br><br><br><br><br><br><br><br><br>
+					</div>
+				</div>
+
+
+			</section>
+			<section>
+				<div class="container">
+					<div class="col">
+						<h3>Usual approach</h3>
+						<img src="./resources/medium_temperature_collectors/cpc_concept.png">
+						<img src="./resources/medium_temperature_collectors/fresnel_type_collector_fresnex.png">
+					</div>
+					<!-- <div class="col">
+						<h3>Fixed mirrors</h3>
+						<img src="./resources/medium_temperature_collectors/fmsc_concrete.png">
+						<img src="./resources/medium_temperature_collectors/fmsc_cross_section.png">
+					</div> -->
+					<div class="col">
+						<h3>UPatras approach</h3>
+						<img src="./resources/medium_temperature_collectors/sco1_cpc_symmetric.png">
+						<img src="./resources/medium_temperature_collectors/sco1_cpc_asymmetric.png">
+					</div>
+				</div>
 			</section>
 			<section><em>Optical simulations</em>
 				<section>
@@ -195,9 +225,9 @@
 						<div class="col">
 							<ul>
 								<li>7 x 11 mirror array in landscape orientation</li>
-								<li>0.14 x 0.14 cm mirror facet</li>
+								<li>14 x 14 cm mirror facet</li>
 								<li>2 mm spacing between mirrors</li>
-								<li>0.25 x 0.25 cm receiver</li>
+								<li>25 x 25 cm receiver</li>
 								<li>1.5 m receiver height (above mirror array center)</li>
 							</ul>
 						</div>
@@ -209,9 +239,9 @@
 						<div class="col">
 							$$n = \frac{F_a}{F_p}$$
 							<br>
-							$$F_a = F_p \cdot C_f - L_{total}$$
-							<br>
 							$$F_p = DNI \cdot S_m$$
+							<br>
+							$$F_a = F_p \cdot C_f - L_{total}$$
 							<br>
 							$$L_{total} = ( L_s + L_m + L_a + L_r )$$
 						</div>
@@ -442,16 +472,15 @@
 						</div>
 					</div>
 					<ul>
-						<li>Stable maximum performance for $\pm1.5$ hours around solar noon during the whole
-							year.</li>
-						<li>Extended time range of efficient operation for higher latitudes</li>
+						<li>Highest performance $\pm1.5$ hours around solar noon through the year.</li>
+						<li>Efficient operation on winter or at higher latitudes</li>
 						<li>Reduced $F_a$ in summer morning & afternoon</li>
-						<li>Larger mirror spacing and enclosure recommended</li>
+						<li>Wider mirror and enclosure spacing recommended</li>
 					</ul>
 				</section>
 			</section>
 			<section><em>Thermal simulations</em>
-				<section>
+				<!-- <section>
 					<h2>Absorber temperature distribution</h2>
 					<ul>
 						<li>
@@ -494,14 +523,14 @@
 							<td>93.9</td>
 						</tr>
 					</table>
-				</section>
+				</section> -->
 				<section>
 					<h2>Basic equations</h2>
 					$$n = \frac{Q_u}{Q_r}$$
 					<br>
 					$$Q_u = \dot{m} C_p (T_{out} - T_{in})$$
 					<br>
-					$$Q_r = I \cdot A$$
+					$$Q_r = IA$$
 					<br>
 					$$n = F_R(\tau \alpha) - F_R U_L\frac{T_{in} - T_{amb}}{IA}$$
 				</section>
@@ -509,7 +538,7 @@
 					<h2>ISO 9806:2017 equation</h2>
 					<hr>
 					\[ \begin{split}
-					\dot m C_p \frac{(T_{out} - T_{in})}{A} & = F'\tau \alpha K_{dir} I_{dir} + F'\tau \alpha
+					\dot m C_p \frac{(T_{out} - T_{in})}{A} & = F_R(\tau \alpha) K_{dir} I_{dir} + F_R(\tau \alpha)
 					K_{dfu}
 					I_{dfu} - c_1 (T_m - T_{amb}) \\
 					& - c_2 (T_m - T_{amb})^2 - c_3 v_w (T_m - T_{amb}) - c_6 v_w I_{glb} \\
@@ -517,7 +546,7 @@
 					\end{split} \]
 					<!-- $\require{\cancel}$
 					\[ \begin{split}
-					\dot m C_p \frac{(T_{out} - T_{in})}{A} & = F'\tau \alpha K_{dir} I_{dir} + F'\tau
+					\dot m C_p \frac{(T_{out} - T_{in})}{A} & = F_R(\tau \alpha) K_{dir} I_{dir} + F_R\tau
 					\alpha K_{dfu}
 					\cancelto{0}{I_{dfu}} - c_1 (T_m - T_{amb}) \\
 					& - c_2 (T_m - T_{amb})^2 - \cancelto{0}{c_3} v_w (T_m - T_{amb}) - \cancelto{0}{c_6} v_w I_{glb} \\
@@ -526,25 +555,23 @@
 					<hr>
 					$$T_m = \frac{T{out} + T{in}}{2}$$
 
-					$$F' \tau \alpha = \frac{n_0}{0.85K_{dir}(15 ^{\circ} ) + 0.15 K_{dfu}}$$
+					$$F_R (\tau \alpha) = \frac{n_0}{0.85K_{dir}(15 ^{\circ} ) + 0.15 K_{dfu}}$$
 
 					$$K_{dir} = K_b(\theta_l) \cdot K_b(\theta_t), \quad K_b = \frac{\gamma_{\theta}}{\gamma_{0}}$$
 
-					\begin{split}
-					n_0 & = F' (\tau \alpha)_{rec} \cdot (\tau^2 \rho \gamma)_{con} \\
+					<!-- \begin{split}
+					n_0 & = F_R ((\tau \alpha))_{rec} \cdot (\tau^2 \rho \gamma)_{con} \\
 					& = n_{0,rec} \cdot (\tau^2 \rho \gamma)_{con}
-					\end{split}
+					\end{split} -->
 
-					$$c_1 = \alpha_1 \frac{A_{rec}}{A_{con}}, \quad c_2 = \alpha_2 \frac{A_{rec}}{A_{con}}, \quad
-					c_5 =
-					m_{th}
+					$$c_1 = \alpha_1 C_{geo}, \quad c_2 = \alpha_2 C_{geo}, \quad c_5 = m_{th} C_{geo}, \quad C_{geo}=
 					\frac{A_{rec}}{A_{con}}$$
 				</section>
 				<section>
 					<h2>Modified ISO equation</h2>
 					Removing zero-terms:
 					<br>
-					$$\dot m C_p \frac{(T_{out} - T_{in})}{A} = F'\tau \alpha K_{dir} I_{dir} - c_1 (T_m - T_{amb})
+					$$\dot m C_p \frac{(T_{out} - T_{in})}{A} = F_R(\tau \alpha) K_{dir} I_{dir} - c_1 (T_m - T_{amb})
 					-
 					c_2 (T_m - T_{amb})^2 - c_5 \frac{dT_m}{dt}$$
 					<br>
@@ -553,7 +580,7 @@
 					<br>
 					<br>
 					<hr>
-					$$ \frac{dT_m}{dt} = \frac{1}{c_5} [F'\tau \alpha K_{dir} I_{dir} - c_1 (T_m - T_{amb}) - c_2
+					$$ \frac{dT_m}{dt} = \frac{1}{c_5} [F_R(\tau \alpha) K_{dir} I_{dir} - c_1 (T_m - T_{amb}) - c_2
 					(T_m -
 					T_{amb})^2 -2 \frac{\dot m C_p}{A} (T_{m} - T_{in})]$$
 					<hr>
@@ -567,7 +594,7 @@
 							<th>Units</th>
 						</tr>
 						<tr>
-							<td>$F&#39;_{\tau\alpha}$</td>
+							<td>$F_R(\tau\alpha)$</td>
 							<td>0.507</td>
 							<td>-</td>
 						</tr>
@@ -651,6 +678,7 @@
 							<img src="./resources/thermal/daily_energy_yield.png">
 						</div>
 					</div>
+					Total: $846.24 \ kWh$
 					<div class="container">
 						<div class="col">
 							<img src="./resources/thermal/dni.png">
@@ -688,7 +716,7 @@
 						</div>
 					</div>
 				</section>
-				<section>
+				<!-- <section>
 					<h2>Automatic Data Acquisition System (ADAS)</h2>
 					<div class="container">
 						<div class="col">
@@ -719,7 +747,7 @@
 							</ol>
 						</div>
 					</div>
-				</section>
+				</section> -->
 				<section>
 					<h2>ISO 9806:2017 requirements</h2>
 					<table class="mytable">
@@ -769,10 +797,10 @@
 						</div>
 					</div>
 				</section>
-				<section>
+				<!-- <section>
 					<h2>ADAS: workflow</h2>
 					<img style="width: 40%;" src="./resources/experiments/flowchart.png">
-				</section>
+				</section> -->
 				<section>
 					<h2>ADAS: class diagram</h2>
 					<img src="./resources/experiments/class_diagram.png">
@@ -785,7 +813,6 @@
 						</div>
 						<div class="col">
 							<img src="./resources/experiments/prototype.jpg">
-
 						</div>
 					</div>
 				</section>
@@ -816,7 +843,7 @@
 					<h2>SCO4: characterization</h2>
 					<img style="width: 60%;" src="./resources/experiments/sco4_efficiency_curve.png">
 					$$n = -1.69 (\pm 0.08) \frac{T_{in} - T_{amb}}{I} + 0.509 (\pm 0.006)$$
-					$R=-0.920$ , p $\lt 0.05$ over 80 points
+					$r=-0.920$ , p $\lt 0.05$ over 80 points
 				</section>
 				<section>
 					<h2>SCO4: model validation</h2>
@@ -826,10 +853,10 @@
 						</div>
 						<div class="col">
 							$$T_{out, pred} = 0.989 (\pm 0.001) T_{out, meas} + 5.7 (\pm 0.1)$$
-							$R=0.999$ , p $\lt 0.05$ over 80 points
-							$$MBE=4.75$$
+							$R^2=0.998$ , p $\lt 0.05$ over 80 points
+							$$MBE=4.75 \ K$$
 							$$RMBE=5.87$$
-							$$RMSE=4.81$$
+							$$RMSE=4.81 \ K$$
 						</div>
 					</div>
 				</section>
